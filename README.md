@@ -2,6 +2,9 @@
 
 Demo game “Horses Racing”.
 
+## Demo
+https://horses-racing.netlify.app/
+
 ### Install
 
 ```bash
