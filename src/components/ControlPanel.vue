@@ -6,6 +6,7 @@ import type { RootState } from '../interfaces/index';
 const store = useStore<RootState>();
 
 const canStart = computed(() => !!store.state.races.program && !store.state.races.isRunning);
+const isRunningRace = computed(() => store.state.races.isRunning);
 
 function onGenerate() {
   if (!store.state.horses.list.length) {
@@ -21,7 +22,7 @@ function onStart() {
 
 <template>
   <div class="controls">
-    <button class="btn" @click="onGenerate">Generate Program</button>
+    <button class="btn" :disabled="isRunningRace" @click="onGenerate">Generate Program</button>
     <button class="btn primary" :disabled="!canStart" @click="onStart">Start</button>
   </div>
 </template>
